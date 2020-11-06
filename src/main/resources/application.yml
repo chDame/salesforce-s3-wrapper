@@ -1,0 +1,33 @@
+# CORE SPRING CONFIGURATION
+spring:
+  profiles:
+    active: local
+  servlet:
+    multipart:
+      enabled: false
+      max-file-size: -1
+      max-request-size: -1   
+          
+# EMBEDDED SERVER CONFIGURATION
+server:
+  port: 443
+  ssl:
+    key-store: cert_key.p12
+    key-store-password: toto
+    keyStoreType: PKCS12
+  error:
+    whitelabel:
+      enabled: false 
+
+amazonProperties:
+  region: eu-west-1
+  accessKey: XXXXXXXXXXXXXXXXXXXX
+  secretKey: XXXXXXXXXX/XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+             
+salesForceProperties:
+  username: xxx@xxx.com
+  password: xxxxxxxxxxxxxxxxxxxxxxxx
+  secretKey: xxxxxxxxxxxxxxxxxxxxxxxx
+  loginUrl: https://test.salesforce.com/services/oauth2/token
+  clientId: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  clientSecret:  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx

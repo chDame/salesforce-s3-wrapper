@@ -1,0 +1,53 @@
+plugins {
+	id 'org.springframework.boot' version '2.1.9.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.8.RELEASE'
+	id 'java'
+}
+
+bootJar {
+    baseName = 'salesforce-s3-wrapper'
+    version =  '1.0.0'
+}
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web-services") 
+
+    providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+    compile("org.springframework.boot:spring-boot-starter-aop")
+	
+    compile("org.springframework.security:spring-security-web")
+
+    compile 'com.amazonaws:aws-java-sdk-s3:1.11.228'
+
+    compile group: 'com.auth0', name:'java-jwt', version: '3.3.0'
+	
+    //swagger for ws def
+    compile("io.springfox:springfox-swagger2:2.9.0")
+    compile("io.springfox:springfox-swagger-ui:2.9.0")
+    
+    compile("org.apache.commons:commons-lang3:3.8.1")
+    
+    compile group: 'com.google.guava', name: 'guava', version: '25.0-jre'
+	
+    compile("commons-fileupload:commons-fileupload:1.3.3")
+	
+    compile("org.springframework.boot:spring-boot-starter-thymeleaf")
+    
+    testCompile("org.springframework.boot:spring-boot-starter-test")
+    testCompile("org.assertj:assertj-core:3.9.1")
+    
+}
+
+test {
+    testLogging {
+        exceptionFormat = 'full'
+    }
+}
